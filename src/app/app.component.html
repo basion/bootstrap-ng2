@@ -1,3 +1,13 @@
 <h1>
   {{title}}
 </h1>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a [routerLink]=" ['./'] " routerLinkActive="active">Home</a></li>
+    <li role="presentation"><a [routerLink]=" ['./home'] " routerLinkActive="active">Profile</a></li>
+    <li role="presentation"><a href="#" [routerLink]="['./main']" routerLinkActive="active">Messages</a></li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
