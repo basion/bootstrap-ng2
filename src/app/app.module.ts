@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {HomeComponent} from "./home/home.component";
@@ -17,8 +16,9 @@ import { BusinessComponent } from './business/business.component';
 import { AboutComponent } from './about/about.component';
 import { QqComponent } from './business/qq/qq.component';
 import { WeixinComponent } from './business/weixin/weixin.component';
-import { TabsModule } from 'ng2-bootstrap';
-
+import { TabsModule } from 'ng2-bootstrap/tabs';
+import {CTabs, CTab} from './views/cTabs'
+import { HttpModule, JsonpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,9 @@ import { TabsModule } from 'ng2-bootstrap';
     BusinessComponent,
     AboutComponent,
     QqComponent,
-    WeixinComponent
+    WeixinComponent,
+    CTabs,
+    CTab
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,9 @@ import { TabsModule } from 'ng2-bootstrap';
     HttpModule,
     RouterModule.forRoot(ROUTERS,{useHash:true,preloadingStrategy:PreloadAllModules}),
     DropdownModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    HttpModule,
+    JsonpModule
   ],
   providers: [],
   bootstrap: [MainComponent]
