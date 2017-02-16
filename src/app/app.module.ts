@@ -16,7 +16,9 @@ import { BusinessComponent } from './business/business.component';
 import { AboutComponent } from './about/about.component';
 import { QqComponent } from './business/qq/qq.component';
 import { WeixinComponent } from './business/weixin/weixin.component';
-import { TabsModule } from 'ng2-bootstrap/tabs';
+// import { TabsModule } from 'ng2-bootstrap/tabs';//"ngx-tabs"
+import { TabsModule } from 'ng2-bootstrap';
+// import { TabsModule } from 'ngx-tabs';
 import {CTabs, CTab} from './views/cTabs'
 import { HttpModule, JsonpModule } from '@angular/http';
 @NgModule({
@@ -31,7 +33,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     QqComponent,
     WeixinComponent,
     CTabs,
-    CTab
+    CTab,
   ],
   imports: [
     BrowserModule,

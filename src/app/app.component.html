@@ -1,13 +1,25 @@
 <h1>
   {{title}}
 </h1>
-<div class="container">
+<div class="container-fluid">
   <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a [routerLink]=" ['./'] " routerLinkActive="active">Home</a></li>
-    <li role="presentation"><a [routerLink]=" ['./home'] " routerLinkActive="active">Profile</a></li>
-    <li role="presentation"><a href="#" [routerLink]="['./main']" routerLinkActive="active">Messages</a></li>
+    <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
+    <!--<li role="presentation" class="active"><a href="#">Profile</a></li>-->
+    <!--<li role="presentation"><a href="#">Messages</a></li>-->
+
+    <li *ngFor="let tab of tabs" role="presentation" [ngClass]="{active: tab.isActive}">
+      <a href="{{tab.url}}" (click)="selectNav(tab)">{{tab.content}}</a>
+    </li>
   </ul>
+  <br>
+
+
+
   <div class="container">
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<!--[routerLink]=" ['./'] " routerLinkActive="active"-->
+<!--[routerLink]=" ['./home'] " routerLinkActive="active"-->
+<!--[routerLink]="['./main']" routerLinkActive="active"-->
